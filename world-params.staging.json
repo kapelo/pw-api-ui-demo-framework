@@ -1,0 +1,5 @@
+{
+    "env": "staging",
+    "url": "https://www.stg-saucedemo.com/",
+    "headless": false
+}
