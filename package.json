@@ -1,0 +1,26 @@
+{
+    "name": "logispin-demo-framework",
+    "version": "0.0.1",
+    "private": true,
+    "description": "Sample project to illustrate framework design",
+    "keywords": [],
+    "license": "ISC",
+    "author": {
+        "name": "Aniekan Eshiet"
+    },
+    "main": "index.js",
+    "scripts": {
+        "test": "cucumber-js"
+    },
+    "dependencies": {
+        "@cucumber/cucumber": "^9.0.0",
+        "playwright": "^1.31.2",
+        "ts-node": "^10.9.1"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.31.2",
+        "@types/chai": "^4.3.4",
+        "chai": "^4.3.7",
+        "typescript": "^4.9.5"
+    }
+}
