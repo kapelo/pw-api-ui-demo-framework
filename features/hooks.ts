@@ -1,11 +1,10 @@
 import { After, Before } from "@cucumber/cucumber";
-import { StitchWorld } from "./world";
+import { DemoWorld } from "./world";
 
-Before(async function (this: StitchWorld) {
+Before(async function (this: DemoWorld) {
     await this.initialize();
-    this.locators = await import (`../locators/${this.parameters.env}.locator`);
 });
 
-After(async function (this: StitchWorld) {
+After(async function (this: DemoWorld) {
     await this.cleanup();
 });

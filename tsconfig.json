@@ -11,5 +11,5 @@
         "resolveJsonModule": true,
         "typeRoots": ["./node_modules/@types"]
     },
-    "include": ["features", "cucumber.js", "page_objects", "helpers"]
+    "include": ["features", "cucumber.js", "page_objects", "lib/helpers"]
 }

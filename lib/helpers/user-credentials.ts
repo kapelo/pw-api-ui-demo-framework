@@ -1,6 +1,5 @@
 import { Credentials } from './credentials';
 import { StandardCredentials } from './standard-user-credentials';
-import { LockedCredentials } from './locked-user-credentials';
 
 export class UserCredential {
     environment: string;
@@ -34,8 +33,4 @@ export class UserCredential {
 
 export function getStandardUserCredentials(environment: string) {
     return new UserCredential(environment).getUserCredentials(StandardCredentials);
-}
-
-export function getLockedUserCredentials(environment: string) {
-    return new UserCredential(environment).getUserCredentials(LockedCredentials);
 }

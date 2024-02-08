@@ -1,5 +1,6 @@
 {
     "env": "production",
-    "url": "https://www.saucedemo.com/",
+    "url": "https://www.saucedemo.com",
+    "apiUrl": "https://api.publicapis.org",
     "headless": false
 }

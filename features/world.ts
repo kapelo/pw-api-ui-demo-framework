@@ -1,24 +1,25 @@
 import { setDefaultTimeout, setWorldConstructor, World } from "@cucumber/cucumber";
-import { Browser, BrowserContext, chromium, LaunchOptions, Page } from "playwright";
-
+import { APIRequestContext, Browser, BrowserContext, chromium, LaunchOptions, Page, request } from "playwright";
 
 export type WorldParameters = {
     env: 'staging' | 'production';
     url: string;
+    apiUrl: string;
     headless: boolean;
 };
 
-export class StitchWorld extends World<WorldParameters> {
+export class DemoWorld extends World<WorldParameters> {
     browser: Browser | null = null;
     context: BrowserContext | null = null;
     page: Page | null = null;
-    locators: any;
+    apiRequest: APIRequestContext | null = null;
     
     async initialize(options?: LaunchOptions) {
         this.browser = await chromium.launch({
             headless: this.parameters.headless,
             ...options,
         });
+        this.apiRequest = await request.newContext({ baseURL: this.parameters.apiUrl });
         this.context = await this.browser.newContext();
         this.page = await this.context.newPage();
     }
@@ -30,8 +31,11 @@ export class StitchWorld extends World<WorldParameters> {
         if (this.browser) {
             await this.browser.close();
         }
+        if (this.apiRequest) {
+            await this.apiRequest.dispose();
+        }
     }
 }
 
 setDefaultTimeout(120000);
-setWorldConstructor(StitchWorld);
+setWorldConstructor(DemoWorld);

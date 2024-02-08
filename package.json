@@ -1,5 +1,5 @@
 {
-    "name": "logispin-demo-framework",
+    "name": "playwright-api-ui-demo-framework",
     "version": "0.0.1",
     "private": true,
     "description": "Sample project to illustrate framework design",
@@ -14,11 +14,11 @@
     },
     "dependencies": {
         "@cucumber/cucumber": "^9.0.0",
+        "dotenv": "^16.3.1",
         "playwright": "^1.31.2",
         "ts-node": "^10.9.1"
     },
     "devDependencies": {
-        "@playwright/test": "^1.31.2",
         "@types/chai": "^4.3.4",
         "chai": "^4.3.7",
         "typescript": "^4.9.5"

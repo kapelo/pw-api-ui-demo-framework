@@ -1,11 +1,20 @@
-const environment = process.env.ENVIRONMENT?.toLowerCase() ?? 'staging';
+/**
+ * Read environment variables from file
+ * https://github.com/motdotla/dotenv
+ */
+require("dotenv").config();
+
+const environment = process.env.ENVIRONMENT?.toLowerCase() ?? 'production';
 const worldParameters = require(`./world-params.${environment}.json`);
 
 module.exports = {
     default: {
-        publishQuiet: true,
         requireModule: ['ts-node/register'],
-        require: ['features/**/*.ts', 'helpers/**/*.ts'],
+        require: ['features/**/*.ts', 'lib/**/*.ts'],
+        format: [
+          ["html", "reports/html-report.html"]
+        ],
+      
         worldParameters,
     },
 };
