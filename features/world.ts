@@ -16,7 +16,7 @@ export class DemoWorld extends World<WorldParameters> {
     
     async initialize(options?: LaunchOptions) {
         this.browser = await chromium.launch({
-            headless: this.parameters.headless,
+            headless: process.env.CI ? true : this.parameters.headless,
             ...options,
         });
         this.apiRequest = await request.newContext({ baseURL: this.parameters.apiUrl });
