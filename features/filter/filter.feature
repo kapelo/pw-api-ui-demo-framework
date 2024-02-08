@@ -1,3 +1,4 @@
+@filter
 Feature: Filter entries
   Scenario: Filter entries by category
     Given I get all entries from Public APIs

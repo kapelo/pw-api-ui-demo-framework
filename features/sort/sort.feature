@@ -1,3 +1,4 @@
+@sort
 Feature: Sort items in ascending and descending order
   Background:
     Given I am on the Swag Labs login page

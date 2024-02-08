@@ -10,7 +10,9 @@
     },
     "main": "index.js",
     "scripts": {
-        "test": "cucumber-js"
+        "test": "cucumber-js",
+        "test:api": "cucumber-js --tags '@filter'",
+        "test:ui": "cucumber-js --tags '@sort'"
     },
     "dependencies": {
         "@cucumber/cucumber": "^9.0.0",
