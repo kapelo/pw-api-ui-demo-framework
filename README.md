@@ -72,6 +72,13 @@ Follow the steps below to run the tests on your local
   ENVIRONMENT=production npm run test
   ```
 
-### *Run the test on CI*
+### Run the test on CI
 
 1. Run the follo
+
+### View Test Result
+
+After test run a html report (html-report.html) is generated and stored in the reports folder.
+Download the file and view it in your browser.
+
+![Result](result/cucumber-report.png)

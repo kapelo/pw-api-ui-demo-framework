@@ -1,0 +1,15 @@
+stages:
+  - test
+
+e2e-demo:
+  stage: test
+  image: mcr.microsoft.com/playwright:v1.40.0-jammy      
+  script:
+    - echo "${ENV_DEV}" > .env
+    - npm ci
+    - ENVIRONMENT=production npm run test
+  artifacts:
+    when: always
+    paths:
+      - playwright-report/
+    expire_in: 1 day
